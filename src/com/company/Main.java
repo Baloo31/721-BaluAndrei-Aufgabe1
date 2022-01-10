@@ -20,7 +20,6 @@ public class Main {
 
         Service service = new Service();
         List<Kunde> kundenSortiert = service.sortKundeNachAnzMittarneiterFallend(kunden);
-        System.out.println(kundenSortiert);
 
         try {
             repository.writeToFile("kundensortiet.txt", kundenSortiert, ",");

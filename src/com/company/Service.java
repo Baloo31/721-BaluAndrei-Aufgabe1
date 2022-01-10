@@ -13,13 +13,12 @@ public class Service {
     public void writeStatisticTopOrte(List<Kunde> liste) {
         Repository repository = new Repository();
 
-        List<Kunde> kunden = liste.stream().sorted().collect(Collectors.toList());
+        List<Kunde> kunden = liste.stream().sorted((kunde, otherKunde) -> kunde.mehrEinkommen(otherKunde)).collect(Collectors.toList());
         try {
             repository.writeToFile("statistik.txt", kunden, ",");
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
-
 
 }

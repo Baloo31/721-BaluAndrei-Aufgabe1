@@ -79,7 +79,12 @@ public class Kunde {
     }
 
     public int hatKleinerAnzMittarbeiter(Kunde andereKunde) {
-        if (this.getAnzMitarbeiter() > andereKunde.getAnzMitarbeiter()) return 1;
+        if (this.getAnzMitarbeiter() < andereKunde.getAnzMitarbeiter()) return 1;
+        return 0;
+    }
+
+    public int mehrEinkommen(Kunde otherKunde) {
+        if (this.getEinkommen() > otherKunde.getEinkommen() ) return 1;
         return 0;
     }
 }
